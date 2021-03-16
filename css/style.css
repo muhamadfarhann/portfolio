@@ -618,12 +618,14 @@ a:hover {
   text-align: right;
   font-weight: 600;
   font-size: 3rem;
+  margin-right: 50px;
 }
 
 .intro .intro-subtitle {
   font-size: 1.5rem;
   font-weight: 300;
   text-align: right;
+  margin-right: 50px;
 }
 
 .intro .text-slider-items {
