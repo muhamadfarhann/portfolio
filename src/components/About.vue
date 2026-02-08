@@ -25,7 +25,7 @@ import { User, MapPin, Briefcase, GraduationCap } from 'lucide-vue-next'
         <MapPin class="text-blue-500 dark:text-blue-400" />
         <div>
           <p class="text-xs text-slate-400 dark:text-slate-500 uppercase font-bold tracking-wider">Location</p>
-          <p class="font-medium dark:text-white">Indonesia</p>
+          <p class="font-medium dark:text-white">Bandung, Jawa Barat, Indonesia</p>
         </div>
       </div>
       <div class="flex items-center gap-4 p-4 bg-slate-50 dark:bg-slate-800 rounded-xl transition-colors duration-300">
