@@ -91,7 +91,7 @@ onMounted(() => {
             </div>
           </div>
           
-          <h1 class="text-3xl font-bold mb-3 tracking-tight">M. Farhan</h1>
+          <h1 class="text-3xl font-bold mb-3 tracking-tight">Muhamad Farhan</h1>
           <div class="px-4 py-1.5 bg-blue-500/10 text-blue-400 rounded-full text-sm font-bold border border-blue-500/20 mb-8">
             Web & Mobile Developer
           </div>

@@ -10,7 +10,7 @@ import { User, MapPin, Briefcase, GraduationCap } from 'lucide-vue-next'
 
     <div class="prose prose-slate max-w-none mb-12">
       <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
-        Hello! I'm M. Farhan, a developer based in Indonesia. I have a deep passion for software development, 
+        Hello! I'm Farhan, a developer based in Indonesia. I have a deep passion for software development, 
         specifically in bridging the gap between web and mobile platforms. 
       </p>
       <p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed mt-4 transition-colors duration-300">
