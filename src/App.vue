@@ -23,6 +23,8 @@ import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import Experiences from './components/Experiences.vue'
 import Contact from './components/Contact.vue'
+import profileImage from './assets/farhan2.jpg'
+import profileImage2 from './assets/pas-foto.jpg'
 
 const currentSection = ref('home')
 const isDark = ref(false)
@@ -84,8 +86,8 @@ onMounted(() => {
         <div class="flex-1 flex flex-col items-center text-center">
           <div class="relative mb-8 group">
             <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-            <div class="relative w-40 h-40 bg-slate-800 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Farhan" alt="Profile" class="w-full h-full object-cover" />
+            <div class="relative w-48 h-48 bg-slate-800 rounded-full overflow-hidden border-4 border-slate-800 shadow-2xl">
+              <img :src="profileImage" alt="Profile" class="w-full h-full object-cover" />
             </div>
           </div>
           

@@ -11,8 +11,8 @@ const contacts = [
   },
   {
     name: 'Instagram',
-    value: '@_mfrhn_',
-    link: 'https://instagram.com/_mfrhn_',
+    value: '@_mfrhnn_',
+    link: 'https://instagram.com/_mfrhnn_',
     icon: Instagram,
     color: 'bg-pink-600'
   },
