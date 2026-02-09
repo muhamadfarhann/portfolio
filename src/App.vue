@@ -78,7 +78,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-slate-50 dark:bg-slate-950 flex items-center justify-center p-4 font-sans selection:bg-blue-100 selection:text-blue-600 transition-colors duration-300">
+  <div class="min-h-screen bg-gradient-to-br from-orange-200 via-blue-200 to-orange-200 dark:bg-none dark:bg-slate-950 bg-[length:400%_400%] animate-gradient-slow flex items-center justify-center p-4 font-sans selection:bg-blue-100 selection:text-blue-600 transition-colors duration-300">
     <div class="bg-white dark:bg-slate-900 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.05)] w-full max-w-7xl flex flex-col lg:flex-row overflow-hidden min-h-[85vh] border border-slate-100 dark:border-slate-800 transition-colors duration-300">
       
       <!-- Sidebar / vCard Info -->

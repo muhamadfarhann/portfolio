@@ -2,7 +2,11 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [vue()],
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
-})
+  server: {
+    host: '0.0.0.0', // ← ini penting
+    port: 5173,      // opsional, sesuaikan jika perlu
+  },
+  base: mode === 'production' ? '/' : '/',
+}))

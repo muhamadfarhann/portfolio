@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { Layout, ExternalLink, Github, ChevronLeft, ChevronRight, X } from 'lucide-vue-next'
 
 interface Project {
@@ -39,8 +39,48 @@ const projects: Project[] = [
       'https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=1000&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1579389083078-4e7018379f7e?q=80&w=1000&auto=format&fit=crop'
     ],
+  },
+  {
+    title: 'Aplikasi Cetak Tiket Antrian',
+    description: 'A Flutter app for printing queue tickets quickly and reliably.',
+    tech: ['Flutter'],
+    images: [
+      'https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1555617117-08fda9f8f0d2?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?q=80&w=1000&auto=format&fit=crop'
+    ],
+  },
+  {
+    title: 'Website Service Motor',
+    description: 'A Laravel-based website to manage motorcycle service bookings and records.',
+    tech: ['Laravel'],
+    images: [
+      'https://images.unsplash.com/photo-1486006920555-c77dcf18193c?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?q=80&w=1000&auto=format&fit=crop'
+    ],
   }
 ]
+
+const pageSize = 4
+const currentPage = ref(1)
+const totalPages = computed(() => Math.max(1, Math.ceil(projects.length / pageSize)))
+const pagedProjects = computed(() => {
+  const start = (currentPage.value - 1) * pageSize
+  return projects.slice(start, start + pageSize)
+})
+
+const nextPage = () => {
+  if (currentPage.value >= totalPages.value) return
+  currentPage.value += 1
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const prevPage = () => {
+  if (currentPage.value <= 1) return
+  currentPage.value -= 1
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 
 const selectedProject = ref<Project | null>(null)
 const currentImageIndex = ref(0)
@@ -105,7 +145,7 @@ const handleKeydown = (e: KeyboardEvent) => {
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       <div 
-        v-for="project in projects" 
+        v-for="project in pagedProjects" 
         :key="project.title"
         class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl overflow-hidden group hover:shadow-xl transition-all flex flex-col h-full duration-300"
       >
@@ -147,6 +187,32 @@ const handleKeydown = (e: KeyboardEvent) => {
           </div>
         </div>
       </div>
+    </div>
+
+    <div v-if="totalPages > 1" class="mt-10 flex items-center justify-center gap-4">
+      <button
+        type="button"
+        @click="prevPage"
+        :disabled="currentPage === 1"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-md"
+      >
+        <ChevronLeft :size="18" />
+        Prev
+      </button>
+
+      <div class="text-sm font-semibold text-slate-600 dark:text-slate-300 tabular-nums">
+        Page {{ currentPage }} / {{ totalPages }}
+      </div>
+
+      <button
+        type="button"
+        @click="nextPage"
+        :disabled="currentPage === totalPages"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-white transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed hover:shadow-md"
+      >
+        Next
+        <ChevronRight :size="18" />
+      </button>
     </div>
 
     <!-- Enhanced Image Modal / Gallery -->

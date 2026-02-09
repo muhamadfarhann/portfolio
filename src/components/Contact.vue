@@ -5,7 +5,7 @@ const contacts = [
   {
     name: 'WhatsApp',
     value: '+62 877 2225 0220',
-    link: 'https://wa.me/6281234567890',
+    link: 'https://wa.me/6287722250220',
     icon: MessageCircle,
     color: 'bg-green-500'
   },
